@@ -5,15 +5,15 @@
     "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Garrett Greeley",
+        "url": "https://github.com/ggreeley"
       }
     ],
     "date": "2021-04-01",
     "categories": [],
-    "contents": "\n\n\n\n",
-    "preview": {},
-    "last_modified": "2021-04-01T18:57:57-04:00",
+    "contents": "\nHello\n\n\n\n\n\n\n",
+    "preview": "posts/welcome/welcome_files/figure-html5/unnamed-chunk-1-1.png",
+    "last_modified": "2021-04-02T18:32:43-04:00",
     "input_file": {}
   }
 ]

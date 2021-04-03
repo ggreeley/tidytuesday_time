@@ -1,13 +1,12 @@
 ---
-title: "Welcome to My Blog"
+title: "Welcome"
 description: |
-  Welcome to our new blog, My Blog. We hope you enjoy 
-  reading what we have to say!
+  Welcome to my #tidytuesday blog, NAME!
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Garrett Greeley 
+    url: https://github.com/ggreeley
+    affiliation: Stony Brook University (Ph.D. Student)
+    affiliation_url: 
 date: 04-01-2021
 output:
   distill::distill_article:
@@ -23,4 +22,11 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
+Hello
+
+```{r}
+x <- runif(100)
+y <- rnorm(100)
+plot(x, y)
+```
 
