@@ -1,0 +1,62 @@
+---
+title: "Ask A Manager"
+description: |
+  In this post, I explore, analyze, and visualize survey data from Ask A Manager.
+author:
+  - name: Garrett D. Greeley
+    url: https://github.com/ggreeley
+date: 05-19-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Libraries
+
+```{r library load}
+library(tidyverse)
+```
+
+## Data
+
+Data for this week (5/18/2021) from: <https://www.askamanager.org/2021/05/some-findings-from-24000-peoples-salaries.html>
+
+```{r get data}
+#tuesdata <- tidytuesdayR::tt_load(2021, week = 21)
+#survey <- tuesdata$survey
+
+# for dev, read local csv
+survey <- read_csv("./tt_5_18_2021.csv")
+```
+
+## Initial Exploration
+
+First, peek at the data structure (variable types, missingness, etc.).
+
+```{r}
+skimr::skim(survey)
+```
+
+There are *a lot* of industries indicated (N = 1068), so keeping with the blog, analyses and visualizations including this variable will be filtered down to sectors with **greater than 500 respondents**. This includes 13 industries and 20,746 respondents:
+
+```{r}
+survey %>%
+  count(industry) %>%
+  filter(n >= 500) %>%
+  arrange(-n) %>%
+  knitr::kable()
+
+survey %>%
+  count(industry) %>%
+  filter(n >= 500) %>%
+  summarise(sum = sum(n)) %>%
+  knitr::kable()
+```
+

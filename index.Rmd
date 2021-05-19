@@ -1,13 +1,9 @@
 ---
-title: "My Blog"
+title: "Garrett's #tidytuesday Time"
 site: distill::distill_website
 listing: posts
 ---
 
 # Hello
 
-## Hello
-
-### Hello
-
-# I am doing  dishes
+Text

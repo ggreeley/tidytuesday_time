@@ -2,7 +2,7 @@
   "articles": [
     {
       "path": "about.html",
-      "title": "About this blog",
+      "title": "Garrett D. Greeley",
       "description": "Some additional details about the blog",
       "author": [],
       "contents": "\nHELLO\n\n\n\n",
@@ -10,10 +10,10 @@
     },
     {
       "path": "index.html",
-      "title": "My Blog",
+      "title": "Garrett's #tidytuesday Time",
       "author": [],
-      "contents": "\nHello\nHello\nHello\nI am doing dishes\n\n\n\n",
-      "last_modified": "2021-04-02T18:54:39-04:00"
+      "contents": "\nHello\nText\n\n\n\n",
+      "last_modified": "2021-05-19T19:31:17-04:00"
     }
   ],
   "collections": ["posts/posts.json"]
