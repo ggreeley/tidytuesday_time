@@ -1,19 +1,36 @@
 [
   {
-    "path": "posts/welcome/",
-    "title": "Welcome to My Blog",
-    "description": "Welcome to our new blog, My Blog. We hope you enjoy \nreading what we have to say!",
+    "path": "posts/2021-05-19-ask-a-manager/",
+    "title": "Ask A Manager",
+    "description": "In this post, I explore, analyze, and visualize survey data from Ask A Manager.",
     "author": [
       {
-        "name": "Nora Jones",
-        "url": "https://example.com/norajones"
+        "name": "Garrett D. Greeley",
+        "url": "https://github.com/ggreeley"
       }
     ],
-    "date": "2021-04-01",
+    "date": "2021-05-19",
     "categories": [],
-    "contents": "\n\n\n\n",
+    "contents": "\nLibraries\n\n\nShow code\n\nlibrary(tidyverse)\n\n\n\nData\nData for this week (5/18/2021) from: https://www.askamanager.org/2021/05/some-findings-from-24000-peoples-salaries.html\n\n\nShow code\n\n#tuesdata <- tidytuesdayR::tt_load(2021, week = 21)\n#survey <- tuesdata$survey\n\n# for dev, read local csv\nsurvey <- read_csv(\"./tt_5_18_2021.csv\")\n\n\n\nInitial Exploration\nFirst, peek at the data structure (variable types, missingness, etc.).\n\n\nShow code\n\nskimr::skim(survey)\n\n\nTable 1: Data summary\nName\nsurvey\nNumber of rows\n26232\nNumber of columns\n18\n_______________________\n\nColumn type frequency:\n\ncharacter\n17\nnumeric\n1\n________________________\n\nGroup variables\nNone\nVariable type: character\nskim_variable\nn_missing\ncomplete_rate\nmin\nmax\nempty\nn_unique\nwhitespace\ntimestamp\n0\n1.00\n16\n18\n0\n23454\n0\nhow_old_are_you\n0\n1.00\n5\n10\n0\n7\n0\nindustry\n59\n1.00\n2\n171\n0\n1068\n0\njob_title\n0\n1.00\n1\n126\n0\n12622\n0\nadditional_context_on_job_title\n19467\n0.26\n1\n781\n0\n6481\n6\nother_monetary_comp\n6785\n0.74\n1\n9\n0\n800\n0\ncurrency\n0\n1.00\n3\n7\n0\n11\n0\ncurrency_other\n26062\n0.01\n1\n111\n0\n100\n0\nadditional_context_on_income\n23353\n0.11\n1\n1143\n0\n2806\n2\ncountry\n0\n1.00\n1\n209\n0\n294\n0\nstate\n4687\n0.82\n4\n114\n0\n124\n0\ncity\n22\n1.00\n1\n171\n0\n4012\n0\noverall_years_of_professional_experience\n0\n1.00\n9\n16\n0\n8\n0\nyears_of_experience_in_field\n0\n1.00\n9\n16\n0\n8\n0\nhighest_level_of_education_completed\n196\n0.99\n3\n34\n0\n6\n0\ngender\n148\n0.99\n3\n29\n0\n5\n0\nrace\n146\n0.99\n5\n125\n0\n47\n0\nVariable type: numeric\nskim_variable\nn_missing\ncomplete_rate\nmean\nsd\np0\np25\np50\np75\np100\nhist\nannual_salary\n0\n1\n145725.4\n5543526\n0\n54000\n76000\n110000\n8.7e+08\n▇▁▁▁▁\n\nThere are a lot of industries indicated (N = 1068), so keeping with the blog, analyses and visualizations including this variable will be filtered down to sectors with greater than 500 respondents. This includes 13 industries and 20,746 respondents:\n\n\nShow code\n\nsurvey %>%\n  count(industry) %>%\n  filter(n >= 500) %>%\n  arrange(-n) %>%\n  knitr::kable()\n\n\nindustry\nn\nComputing or Tech\n4360\nEducation (Higher Education)\n2359\nNonprofits\n2331\nGovernment and Public Administration\n1821\nHealth care\n1739\nAccounting, Banking & Finance\n1688\nEngineering or Manufacturing\n1519\nMarketing, Advertising & PR\n1064\nLaw\n1050\nEducation (Primary/Secondary)\n805\nBusiness or Consulting\n778\nMedia & Digital\n732\nInsurance\n500\n\nShow code\n\nsurvey %>%\n  count(industry) %>%\n  filter(n >= 500) %>%\n  summarise(sum = sum(n)) %>%\n  knitr::kable()\n\n\nsum\n20746\n\n\n\n\n",
     "preview": {},
-    "last_modified": "2021-04-01T18:57:57-04:00",
+    "last_modified": "2021-05-19T19:17:08-04:00",
+    "input_file": {}
+  },
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome!",
+    "description": "Who I am and what you'll find on this blog.",
+    "author": [
+      {
+        "name": "Garrett D. Greeley",
+        "url": "https://github.com/ggreeley"
+      }
+    ],
+    "date": "2021-05-18",
+    "categories": [],
+    "contents": "\nHello!\n\n\n\n",
+    "preview": {},
+    "last_modified": "2021-05-19T19:18:06-04:00",
     "input_file": {}
   }
 ]

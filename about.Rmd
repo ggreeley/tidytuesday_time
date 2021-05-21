@@ -1,5 +1,5 @@
 ---
-title: "About this blog"
+title: "Garrett D. Greeley"
 description: |
   Some additional details about the blog
 ---
